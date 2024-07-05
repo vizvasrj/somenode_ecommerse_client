@@ -23,4 +23,4 @@ EXPOSE 8080
 
 RUN npm run build
 # Start the client
-CMD [ "npm", "run", "dev" ]
+CMD [ "npm", "start" ]
