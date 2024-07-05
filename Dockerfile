@@ -19,7 +19,7 @@ COPY . .
 # RUN mv .env.example .env
 
 # Build the client for production
-# RUN npm run build
+RUN npm run build
 
 # Expose port 8080 for the client
 EXPOSE 8080
