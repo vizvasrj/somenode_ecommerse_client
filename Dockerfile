@@ -24,6 +24,6 @@ RUN npm run build
 # Expose port 8080 for the client
 EXPOSE 8080
 
-RUN npm run build:dev
+# RUN npm run build:dev
 # Start the client
 CMD [ "npm", "start" ]
