@@ -30,35 +30,37 @@ import * as contact from './containers/Contact/actions';
 import * as order from './containers/Order/actions';
 import * as review from './containers/Review/actions';
 import * as wishlist from './containers/WishList/actions';
+import * as orderAddress from './containers/OrderAddressForm/actions';
 
 export default function mapDispatchToProps(dispatch) {
-  return bindActionCreators(
-    {
-      ...application,
-      ...authentication,
-      ...homepage,
-      ...signup,
-      ...login,
-      ...forgotPassword,
-      ...navigation,
-      ...cart,
-      ...newsletter,
-      ...dashboard,
-      ...account,
-      ...address,
-      ...resetPassword,
-      ...users,
-      ...product,
-      ...category,
-      ...brand,
-      ...menu,
-      ...shop,
-      ...merchant,
-      ...contact,
-      ...order,
-      ...review,
-      ...wishlist
-    },
-    dispatch
-  );
+    return bindActionCreators(
+        {
+            ...application,
+            ...authentication,
+            ...homepage,
+            ...signup,
+            ...login,
+            ...forgotPassword,
+            ...navigation,
+            ...cart,
+            ...newsletter,
+            ...dashboard,
+            ...account,
+            ...address,
+            ...resetPassword,
+            ...users,
+            ...product,
+            ...category,
+            ...brand,
+            ...menu,
+            ...shop,
+            ...merchant,
+            ...contact,
+            ...order,
+            ...review,
+            ...wishlist,
+            ...orderAddress
+        },
+        dispatch
+    );
 }

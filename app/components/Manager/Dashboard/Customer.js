@@ -18,33 +18,37 @@ import AccountSecurity from '../../../containers/AccountSecurity';
 import Address from '../../../containers/Address';
 import Order from '../../../containers/Order';
 import Wishlist from '../../../containers/WishList';
+import Cart from '../../../containers/Cart';
+import OrderAddressForm from '../../../containers/OrderAddressForm';
 
 const Customer = props => {
-  const { user } = props;
+    const { user } = props;
 
-  return (
-    <div className='customer'>
-      <Row>
-        <Col xs='12' md='5' xl='3'>
-          <AccountMenu {...props} />
-        </Col>
-        <Col xs='12' md='7' xl='9'>
-          <div className='panel-body'>
-            <Switch>
-              <Route exact path='/dashboard' component={Account} />
-              {!isProviderAllowed(user.provider) && (
-                <Route path='/dashboard/security' component={AccountSecurity} />
-              )}
-              <Route path='/dashboard/address' component={Address} />
-              <Route path='/dashboard/orders' component={Order} />
-              <Route path='/dashboard/wishlist' component={Wishlist} />
-              <Route path='*' component={Page404} />
-            </Switch>
-          </div>
-        </Col>
-      </Row>
-    </div>
-  );
+    return (
+        <div className='customer'>
+            <Row>
+                <Col xs='12' md='5' xl='3'>
+                    <AccountMenu {...props} />
+                </Col>
+                <Col xs='12' md='7' xl='9'>
+                    <div className='panel-body'>
+                        <Switch>
+                            <Route exact path='/dashboard' component={Account} />
+                            {!isProviderAllowed(user.provider) && (
+                                <Route path='/dashboard/security' component={AccountSecurity} />
+                            )}
+                            <Route path='/dashboard/address' component={Address} />
+                            <Route path='/dashboard/orders' component={Order} />
+                            <Route path='/dashboard/wishlist' component={Wishlist} />
+                            <Route path='/dashboard/cart' component={Cart} />
+                            <Route path='/dashboard/address-list' component={OrderAddressForm} />
+                            <Route path='*' component={Page404} />
+                        </Switch>
+                    </div>
+                </Col>
+            </Row>
+        </div>
+    );
 };
 
 export default Customer;

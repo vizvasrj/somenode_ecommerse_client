@@ -62,8 +62,10 @@ export const setAddressLoading = value => {
 export const fetchAddresses = () => {
   return async (dispatch, getState) => {
     try {
+      console.log("fetchAddresses from actions")
       dispatch(setAddressLoading(true));
       const response = await axios.get(`${API_URL}/address`);
+      console.log("fetchAddresses response", response.data.addresses)
       dispatch({ type: FETCH_ADDRESSES, payload: response.data.addresses });
     } catch (error) {
       handleError(error, dispatch);
@@ -73,17 +75,31 @@ export const fetchAddresses = () => {
   };
 };
 
+export const someFunctionToTest = () => {
+  return async (dispatch, getState) => {
+    try {
+      console.log("someFunctionToTest")
+    } catch (error) {
+      console.log("error", error)
+      handleError(error, dispatch);
+    }
+  };
+
+}
+
 // fetch address api
 export const fetchAddress = addressId => {
   return async (dispatch, getState) => {
     try {
+      console.log("before axios")
       const response = await axios.get(`${API_URL}/address/${addressId}`);
-
+      console.log("after axios", response.data.address)
       dispatch({
         type: FETCH_ADDRESS,
         payload: response.data.address
       });
     } catch (error) {
+      console.log("error", error)
       handleError(error, dispatch);
     }
   };
