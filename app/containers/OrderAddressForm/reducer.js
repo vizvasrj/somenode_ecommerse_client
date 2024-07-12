@@ -1,9 +1,10 @@
 // reducer.js
-import { FETCH_ADDRESSES, SET_ADDRESS_LOADING } from "./constants";
+import { FETCH_ADDRESSES, SET_ADDRESS_LOADING, SET_SELECTED_ADDRESS } from "./constants";
 
 
 const initialState = {
     addresses: [],
+    selectedAddress: null,
 };
 
 const orderAddressReducer = (state = initialState, action) => {
@@ -19,6 +20,13 @@ const orderAddressReducer = (state = initialState, action) => {
                 ...state,
                 loading: action.payload,
             };
+
+        case SET_SELECTED_ADDRESS:
+            return {
+                ...state,
+                selectedAddress: action.payload,
+            };
+
         default:
             return state;
     }

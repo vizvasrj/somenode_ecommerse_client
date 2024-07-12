@@ -22,7 +22,7 @@ const Checkout = props => {
     // };
 
     const handlePlaceOrder = () => {
-        history.push('/dashboard/cart/address-list');
+        history.push('/cart/address');
         // if (selectedAddress) {
         //     placeOrder(selectedAddress);
         // } else {
