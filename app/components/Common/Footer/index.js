@@ -17,7 +17,8 @@ const Footer = () => {
         { id: 1, name: 'Sell With Us', to: '/sell' },
         { id: 2, name: 'Shipping', to: '/shipping' },
         { id: 4, name: 'Privacy Policy', to: '/privacy-policy' },
-        { id: 5, name: 'Terms & Conditions', to: '/terms-conditions' }
+        { id: 5, name: 'Terms & Conditions', to: '/terms-and-conditions' },
+        { id: 6, name: 'Refund & Cancellation Policy', to: '/refund-cancellation-policies' }
     ];
 
     const footerBusinessLinks = (

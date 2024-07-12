@@ -40,7 +40,7 @@ import Cart from '../Cart';
 import OrderAddressForm from '../OrderAddressForm';
 import TermsAndConditions from '../../components/Terms/TermsAndConditions';
 import RefundCancellationPolicies from '../../components/Terms/RefundCalcellationPolicies';
-
+import PrivacyPolicy from '../../components/Terms/privacyPolicy';
 class Application extends React.PureComponent {
     constructor(props) {
         super(props);
@@ -117,6 +117,8 @@ class Application extends React.PureComponent {
                                     path='/refund-cancellation-policies'
                                     component={RefundCancellationPolicies}
                                 />
+                                <Route path='/privacy-policy' component={PrivacyPolicy} />
+
                                 <Route path='/404' component={Page404} />
                                 <Route path='*' component={Page404} />
                             </Switch>
